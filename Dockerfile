@@ -1,6 +1,6 @@
 FROM centos:7
 
-ARG PYTHON_VERSION=3.6.4
+ARG PYTHON_VERSION=3.6.8
 RUN mkdir -p /tmp/python-src/Python-$PYTHON_VERSION
 WORKDIR /tmp/python-src/Python-$PYTHON_VERSION
 RUN yum check-update \
