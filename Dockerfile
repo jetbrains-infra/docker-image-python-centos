@@ -3,7 +3,7 @@ FROM centos:7
 ARG PYTHON_VERSION=3.6.8
 RUN mkdir -p /tmp/python-src/Python-$PYTHON_VERSION
 WORKDIR /tmp/python-src/Python-$PYTHON_VERSION
-RUN yum check-update \
+RUN yum check-update || true \
     && yum -y groupinstall "Development tools" \
     && yum -y install wget zlib-devel bzip2-devel openssl-devel ncurses-devel libxml2-devel libxslt-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libjpeg-devel \
     && wget --no-check-certificate https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz -O /tmp/python.tgz \
